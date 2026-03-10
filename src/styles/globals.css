@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  body {
+    background-color: theme('colors.bamboo-cream');
+    color: theme('colors.deep-slate');
+  }
+}
+
 @layer utilities {
   /* Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
@@ -50,6 +57,10 @@
 }
 
 @layer components {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-sm rounded-lg;
+  }
+
   .content-container {
     @apply max-w-[1440px] w-full mx-auto px-6;
   }

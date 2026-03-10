@@ -1,6 +1,6 @@
 import { HttpTypes } from "@medusajs/types"
 import { Container } from "@medusajs/ui"
-import Image from "next/image"
+import ZoomImage from "../zoom-image"
 
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
@@ -18,16 +18,13 @@ const ImageGallery = ({ images }: ImageGalleryProps) => {
               id={image.id}
             >
               {!!image.url && (
-                <Image
+                <ZoomImage
                   src={image.url}
                   priority={index <= 2 ? true : false}
-                  className="absolute inset-0 rounded-rounded"
+                  className="absolute inset-0 rounded-rounded object-cover"
                   alt={`Product image ${index + 1}`}
                   fill
                   sizes="(max-width: 576px) 280px, (max-width: 768px) 360px, (max-width: 992px) 480px, 800px"
-                  style={{
-                    objectFit: "cover",
-                  }}
                 />
               )}
             </Container>

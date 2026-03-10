@@ -2,6 +2,7 @@ import { Metadata } from "next"
 
 import FeaturedProducts from "@modules/home/components/featured-products"
 import Hero from "@modules/home/components/hero"
+import Categories from "@modules/home/components/categories"
 import { listCollections } from "@lib/data/collections"
 import { getRegion } from "@lib/data/regions"
 
@@ -29,13 +30,16 @@ export default async function Home(props: {
   }
 
   return (
-    <>
+    <div className="bg-bamboo-cream">
       <Hero />
-      <div className="py-12">
-        <ul className="flex flex-col gap-x-6">
+      <div className="bg-white border-b border-gray-100">
+        <Categories />
+      </div>
+      <div className="py-16">
+        <ul className="flex flex-col gap-y-16">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>
-    </>
+    </div>
   )
 }

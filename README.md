@@ -56,7 +56,11 @@ Features include:
   - Cart
   - Checkout with Stripe
   - User Accounts
-  - Order Details
+- GiftOso Storefront features:
+  - Custom Thoughtfully-inspired UI design.
+  - Interactive Visual Categories component.
+  - Clean layout for the Hero and Store browsing experience.
+  - Tailwind configured with brand colors `panda-rust`, `bamboo-cream`, and `deep-slate`.
 - Full Next.js 15 support:
   - App Router
   - Next fetching/caching

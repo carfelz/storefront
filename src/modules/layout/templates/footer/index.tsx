@@ -12,22 +12,26 @@ export default async function Footer() {
   const productCategories = await listCategories()
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
+    <footer className="border-t border-gray-200 bg-white w-full">
       <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
-          <div>
+        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-16">
+          <div className="max-w-xs">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus text-ui-fg-subtle hover:text-ui-fg-base uppercase"
+              className="hover:text-panda-rust uppercase font-bold flex flex-col items-start transition-colors duration-200 mb-4"
             >
-              Medusa Store
+              <span className="text-3xl drop-shadow-sm leading-none" title="Red Panda Logo">🐼</span>
+              <span className="text-2xl tracking-tighter text-deep-slate font-extrabold leading-none -mt-1 group-hover:text-panda-rust">GiftOso</span>
             </LocalizedClientLink>
+            <Text className="text-sm text-ui-fg-subtle">
+              Thoughtfully curated gifts that bring everyday moments to life. Send a gift they'll truly love.
+            </Text>
           </div>
           <div className="text-small-regular gap-10 md:gap-x-16 grid grid-cols-2 sm:grid-cols-3">
             {productCategories && productCategories?.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
-                  Categories
+                <span className="text-xs font-semibold uppercase tracking-wider text-deep-slate mb-2">
+                  Shop
                 </span>
                 <ul
                   className="grid grid-cols-1 gap-2"
@@ -84,7 +88,7 @@ export default async function Footer() {
             )}
             {collections && collections.length > 0 && (
               <div className="flex flex-col gap-y-2">
-                <span className="txt-small-plus txt-ui-fg-base">
+                <span className="text-xs font-semibold uppercase tracking-wider text-deep-slate mb-2">
                   Collections
                 </span>
                 <ul
@@ -109,37 +113,31 @@ export default async function Footer() {
               </div>
             )}
             <div className="flex flex-col gap-y-2">
-              <span className="txt-small-plus txt-ui-fg-base">Medusa</span>
+              <span className="text-xs font-semibold uppercase tracking-wider text-deep-slate mb-2">Our Company</span>
               <ul className="grid grid-cols-1 gap-y-2 text-ui-fg-subtle txt-small">
                 <li>
-                  <a
-                    href="https://github.com/medusajs"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/about"
                     className="hover:text-ui-fg-base"
                   >
-                    GitHub
-                  </a>
+                    About Us
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://docs.medusajs.com"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/contact"
                     className="hover:text-ui-fg-base"
                   >
-                    Documentation
-                  </a>
+                    Contact
+                  </LocalizedClientLink>
                 </li>
                 <li>
-                  <a
-                    href="https://github.com/medusajs/nextjs-starter-medusa"
-                    target="_blank"
-                    rel="noreferrer"
+                  <LocalizedClientLink
+                    href="/faq"
                     className="hover:text-ui-fg-base"
                   >
-                    Source code
-                  </a>
+                    FAQ
+                  </LocalizedClientLink>
                 </li>
               </ul>
             </div>
@@ -147,9 +145,8 @@ export default async function Footer() {
         </div>
         <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Medusa Store. All rights reserved.
+            © {new Date().getFullYear()} GiftOso. All rights reserved.
           </Text>
-          <MedusaCTA />
         </div>
       </div>
     </footer>

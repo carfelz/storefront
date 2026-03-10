@@ -3,6 +3,7 @@ import Image from "next/image"
 import React from "react"
 
 import PlaceholderImage from "@modules/common/icons/placeholder-image"
+import ZoomImage from "../zoom-image"
 
 type ThumbnailProps = {
   thumbnail?: string | null
@@ -27,7 +28,7 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   return (
     <Container
       className={clx(
-        "relative w-full overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
+        "relative w-full overflow-hidden bg-gray-50 border border-transparent rounded-lg group-hover:shadow-md transition-all ease-out duration-300 group-hover:border-gray-200/50",
         className,
         {
           "aspect-[11/14]": isFeatured,
@@ -51,7 +52,7 @@ const ImageOrPlaceholder = ({
   size,
 }: Pick<ThumbnailProps, "size"> & { image?: string }) => {
   return image ? (
-    <Image
+    <ZoomImage
       src={image}
       alt="Thumbnail"
       className="absolute inset-0 object-cover object-center"
